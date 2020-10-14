@@ -280,5 +280,14 @@ public class QuantityTest {
         double addition = ton.add(gm);
         Assert.assertEquals(1001.0,addition,0.0);
     }
+    // 212 F = 100 C
+    @Test
+    public void given212FahrenheitnAnd100Celsius_ShouldReturnEqualLength()
+    {
+        Length fahren = new Length(Length.Unit.FAHREN,212.0);
+        Length celsius = new Length(Length.Unit.CEL,99.00000000000001);
+        boolean compare = fahren.compare(celsius);
+        Assert.assertTrue(compare);
+    }
 
 }

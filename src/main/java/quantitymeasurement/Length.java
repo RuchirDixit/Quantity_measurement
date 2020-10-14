@@ -1,7 +1,7 @@
 package quantitymeasurement;
 
 public class Length {
-    enum Unit { FEET, INCH, YARD, CM, GALLON, LITRE, ML, KG, GM, TON }
+    enum Unit { FEET, INCH, YARD, CM, GALLON, LITRE, ML, KG, GM, TON, FAHREN, CEL }
     private static final double FEET_TO_INCH = 12.0;
     private static final double FEET_TO_YARD = 3.0;
     private static final double YARD_TO_INCH = 36.0;
@@ -10,6 +10,7 @@ public class Length {
     private static final double LITRE_TO_ML = 1000.0;
     private static final double KG_TO_GM = 1000.0;
     private static final double TON_TO_KG = 1000.0;
+    private static final double FAHREN_TO_CEL = 100.0;
     private Unit unit;
     private double value;
     private String valueString;
@@ -51,6 +52,8 @@ public class Length {
             return Double.compare(this.value * KG_TO_GM,that.value) == 0;
         if (this.unit.equals(Unit.TON) && that.unit.equals(Unit.KG))
             return Double.compare(this.value * TON_TO_KG,that.value) == 0;
+        if (this.unit.equals(Unit.FAHREN) && that.unit.equals(Unit.CEL))
+            return Double.compare((this.value - 32) * 0.55,that.value) == 0;
             return false;
     }
 
