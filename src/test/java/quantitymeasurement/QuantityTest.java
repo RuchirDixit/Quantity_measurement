@@ -217,4 +217,22 @@ public class QuantityTest {
         double addition = inch1.add(cm1);
         Assert.assertEquals(3.0,addition,0.0);
     }
+    // 1 gallon = 3.78 lt
+    @Test
+    public void given1GallonAndLitre_ShouldReturnEqualLength()
+    {
+        Length gallon1 = new Length(Length.Unit.GALLON,1.0);
+        Length litre1 = new Length(Length.Unit.LITRE,3.78);
+        boolean compare = gallon1.compare(litre1);
+        Assert.assertTrue(compare);
+    }
+    // 1 lt = 1000 ml
+    @Test
+    public void given1LitreAnd1000Ml_ShouldReturnEqualLength()
+    {
+        Length litre1 = new Length(Length.Unit.LITRE,1.0);
+        Length ml1 = new Length(Length.Unit.ML,1000.0);
+        boolean compare = litre1.compare(ml1);
+        Assert.assertTrue(compare);
+    }
 }
