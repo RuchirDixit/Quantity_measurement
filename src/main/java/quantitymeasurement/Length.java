@@ -3,12 +3,20 @@ package quantitymeasurement;
 public class Length {
     enum Unit { FEET, INCH}
     private static final double FEET_TO_INCH = 12.0;
-    private final Unit unit;
-    private final double value;
+    private Unit unit;
+    private double value;
+    private String valueString;
 
     public Length(Unit unit,double value) {
         this.unit = unit;
         this.value = value;
+    }
+    public Length(Unit unit,String value) {
+        this.unit = unit;
+        this.valueString = value;
+    }
+    public Length(Unit unit) {
+        this.unit = unit;
     }
 
     public boolean compare(Length that) {
