@@ -179,4 +179,42 @@ public class QuantityTest {
         boolean compare = cm1.compare(inch1);
         Assert.assertTrue(compare);
     }
+
+    // Add 2 in + 2 in = 4 in
+    @Test
+    public void given2InchAnd2Inch_ShouldCorrectValue()
+    {
+        Length inch1 = new Length(Length.Unit.INCH,2.0);
+        Length inch2 = new Length(Length.Unit.INCH,2.0);
+        double addition = inch1.add(inch2);
+        Assert.assertEquals(4.0,addition,0.0);
+    }
+
+    // Add 1 ft + 2 in = 14 in
+    @Test
+    public void given1FeetAnd2Inch_ShouldCorrectValue()
+    {
+        Length feet1 = new Length(Length.Unit.FEET,1.0);
+        Length inch2 = new Length(Length.Unit.INCH,2.0);
+        double addition = feet1.add(inch2);
+        Assert.assertEquals(14.0,addition,0.0);
+    }
+    // Add 1 ft + 1 ft = 24 in
+    @Test
+    public void given1FeetAnd1Feet_ShouldCorrectValue()
+    {
+        Length feet1 = new Length(Length.Unit.FEET,1.0);
+        Length feet2 = new Length(Length.Unit.FEET,1.0);
+        double addition = feet1.add(feet2);
+        Assert.assertEquals(24.0,addition,0.0);
+    }
+    // Add 2 in + 2.5 cm = 3 in
+    @Test
+    public void given2InchAnd2AndHalfCm_ShouldCorrectValue()
+    {
+        Length inch1 = new Length(Length.Unit.INCH,2.0);
+        Length cm1 = new Length(Length.Unit.CM,2.5);
+        double addition = inch1.add(cm1);
+        Assert.assertEquals(3.0,addition,0.0);
+    }
 }

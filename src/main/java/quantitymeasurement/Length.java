@@ -42,6 +42,19 @@ public class Length {
             return false;
     }
 
+    public double add(Length that)
+    {
+        if(this.unit.equals(Unit.INCH) && that.unit.equals(Unit.INCH))
+            return this.value + that.value;
+        if(this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
+            return this.value * FEET_TO_INCH + that.value;
+        if(this.unit.equals(Unit.FEET) && that.unit.equals(Unit.FEET))
+            return this.value * FEET_TO_INCH + that.value * FEET_TO_INCH;
+        if(this.unit.equals(Unit.INCH) && that.unit.equals(Unit.CM))
+            return this.value + that.value / INCH_TO_CM;
+        return 0;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) return true;
