@@ -151,4 +151,32 @@ public class QuantityTest {
         boolean compare = yard1.compare(feet1);
         Assert.assertTrue(compare);
     }
+
+    // 2 Inch = 5 cm
+    @Test
+    public void given2InchAnd5Cm_ShouldReturnTrue()
+    {
+        Length inch1 = new Length(Length.Unit.INCH,2.0);
+        Length cm1 = new Length(Length.Unit.CM,5.0);
+        boolean compare = inch1.compare(cm1);
+        Assert.assertTrue(compare);
+    }
+    // 1 Inch = 2.5 cm
+    @Test
+    public void given1InchAnd2AndHalfCm_ShouldReturnTrue()
+    {
+        Length inch1 = new Length(Length.Unit.INCH,1.0);
+        Length cm1 = new Length(Length.Unit.CM,2.5);
+        boolean compare = inch1.compare(cm1);
+        Assert.assertTrue(compare);
+    }
+    // 5 cm = 2 inch
+    @Test
+    public void given5CmAnd2Inch_ShouldReturnTrue()
+    {
+        Length cm1 = new Length(Length.Unit.CM,5.0);
+        Length inch1 = new Length(Length.Unit.INCH,2.0);
+        boolean compare = cm1.compare(inch1);
+        Assert.assertTrue(compare);
+    }
 }
