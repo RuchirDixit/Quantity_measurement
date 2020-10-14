@@ -253,5 +253,32 @@ public class QuantityTest {
         double addition = litre1.add(ml1);
         Assert.assertEquals(2.0,addition,0.0);
     }
+    // 1 kg = 1000 gms
+    @Test
+    public void given1KgAnd1000Gm_ShouldReturnEqualLength()
+    {
+        Length kg = new Length(Length.Unit.KG,1.0);
+        Length gms = new Length(Length.Unit.GM,1000.0);
+        boolean compare = kg.compare(gms);
+        Assert.assertTrue(compare);
+    }
+    // 1 ton = 1000 kg
+    @Test
+    public void given1TonAnd1000Kg_ShouldReturnEqualLength()
+    {
+        Length ton = new Length(Length.Unit.TON,1.0);
+        Length kg = new Length(Length.Unit.KG,1000.0);
+        boolean compare = ton.compare(kg);
+        Assert.assertTrue(compare);
+    }
+    // Add 1 ton + 1000 gm = 1001 kg
+    @Test
+    public void given1TonAnd1000Gm_ShouldCorrectValue()
+    {
+        Length ton = new Length(Length.Unit.TON,1.0);
+        Length gm = new Length(Length.Unit.GM,1000.0);
+        double addition = ton.add(gm);
+        Assert.assertEquals(1001.0,addition,0.0);
+    }
 
 }
