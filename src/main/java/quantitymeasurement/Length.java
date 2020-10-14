@@ -58,6 +58,10 @@ public class Length {
             return this.value * FEET_TO_INCH + that.value * FEET_TO_INCH;
         if(this.unit.equals(Unit.INCH) && that.unit.equals(Unit.CM))
             return this.value + that.value / INCH_TO_CM;
+        if(this.unit.equals(Unit.GALLON) && that.unit.equals(Unit.LITRE))
+            return this.value * GALLON_TO_LITRE + that.value;
+        if(this.unit.equals(Unit.LITRE) && that.unit.equals(Unit.ML))
+            return this.value + that.value / LITRE_TO_ML;
         return 0;
     }
 

@@ -235,4 +235,23 @@ public class QuantityTest {
         boolean compare = litre1.compare(ml1);
         Assert.assertTrue(compare);
     }
+    // Add 1 gallon + 3.78 lt = 7.56 lt
+    @Test
+    public void given1GallonAndLitre_ShouldCorrectValue()
+    {
+        Length gallon1 = new Length(Length.Unit.GALLON,1.0);
+        Length litre1 = new Length(Length.Unit.LITRE,3.78);
+        double addition = gallon1.add(litre1);
+        Assert.assertEquals(7.56,addition,0.0);
+    }
+    // Add 1 lt + 1000 ml = 2 lt
+    @Test
+    public void given1LitreAnd1000Ml_ShouldCorrectValue()
+    {
+        Length litre1 = new Length(Length.Unit.LITRE,1.0);
+        Length ml1 = new Length(Length.Unit.ML,1000.0);
+        double addition = litre1.add(ml1);
+        Assert.assertEquals(2.0,addition,0.0);
+    }
+
 }
