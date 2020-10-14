@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="quantitymeasurement.QuantityTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-10-13T10:41:35" hostname="DESKTOP-VKMRUMV" time="0.014">
+<testsuite name="quantitymeasurement.QuantityTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-10-14T06:57:56" hostname="DESKTOP-VKMRUMV" time="35.54">
   <properties/>
-  <testcase name="given0InchAnd0Inch_ShouldReturnEqual" classname="quantitymeasurement.QuantityTest" time="0.008"/>
-  <testcase name="given0InchAnd1Inch_ShouldReturnNotEqual" classname="quantitymeasurement.QuantityTest" time="0.0"/>
-  <testcase name="given1FeetAnd1Inch_ShouldReturnNotEqual" classname="quantitymeasurement.QuantityTest" time="0.002"/>
-  <testcase name="given0FeetAnd1Feet_ShouldReturnNotEqual" classname="quantitymeasurement.QuantityTest" time="0.0"/>
-  <testcase name="given0FeetAnd0Feet_ShouldReturnEqual" classname="quantitymeasurement.QuantityTest" time="0.0"/>
+  <testcase name="given1FeetAnd12Inch_ShouldReturnEqualLength" classname="quantitymeasurement.QuantityTest" time="35.54">
+    <skipped/>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
